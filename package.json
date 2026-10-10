@@ -2,7 +2,7 @@
   "name": "default-projects",
   "displayName": "Default Projects",
   "description": "Create projects from your own reusable templates (folders, files, content) - from a sidebar, a Quick Pick or the Command Palette.",
-  "version": "v0.1.1",
+  "version": "0.1.1",
   "publisher": "TomDevtech",
   "license": "GNU General Public License v3.0",
   "icon": "images/icon.png",
