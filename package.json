@@ -3,9 +3,9 @@
   "displayName": "Default Projects",
   "description": "Create projects from your own reusable templates (folders, files, content) - from a sidebar, a Quick Pick or the Command Palette.",
   "version": "0.1.0",
-  "publisher": "tomdevtech",
-  "license": "MIT",
-  "icon": "",
+  "publisher": "TomDevtech",
+  "license": "GNU General Public License v3.0",
+  "icon": "images/icon.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/tomdevtech/Default-Projects"
