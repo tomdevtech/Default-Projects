@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Project Template</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; background-color: var(--vscode-editorGroupHeader-tabsBackground); color: var(--vscode-foreground); }
+        label { display: block; margin-top: 15px; font-weight: bold; }
+        input[type="text"], textarea { width: 100%; padding: 8px; margin-top: 5px; border: 1px solid var(--vscode-input-border); background-color: var(--vscode-input-background); color: var(--vscode-foreground); }
+        button { margin-top: 20px; padding: 10px 15px; background-color: var(--vscode-button-background); color: var(--vscode-button-foreground); border: none; cursor: pointer; }
+        button:hover { background-color: var(--vscode-button-hoverBackground); }
+        #project-definition-output { margin-top: 30px; padding: 15px; border: 1px solid var(--vscode-info.border); background-color: var(--vscode-info.background); white-space: pre-wrap; }
+    </style>
+</head>
+<body>
+    <h1>Define Custom Project Template</h1>
+    <p>Enter the metadata for your custom project. This template will be saved as a shortcut.</p>
+
+    <label for="project-name">Project Name:</label>
+    <input type="text" id="project-name" value="My Custom Project" required>
+
+    <label for="project-type">Project Type (e.g., Python, React):</label>
+    <input type="text" id="project-type" value="Custom" required>
+
+    <label for="file-definitions">Initial File Definitions (JSON format: [{"path": "file.txt", "content": "..."}])</label>
+    <textarea id="file-definitions" rows="10" placeholder='[{"path": "README.md", "content": "# My Custom Project"}]'></textarea>
+
+    <label for="directories">Required Directories (comma-separated):</label>
+    <input type="text" id="directories" value="src, tests" placeholder="src, tests">
+
+    <button id="save-template-btn">Save Template / Use Template</button>
+    <button id="scaffold-project-btn">Scaffold Project with Selected Template</button>
+
+    <h2>Saved Template Output:</h2>
+    <div id="project-definition-output">No template saved yet.</div>
+
+    <script src="custom-template-config.js"></script>
+</body>
+</html>
