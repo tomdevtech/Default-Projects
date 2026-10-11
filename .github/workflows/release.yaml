@@ -99,9 +99,13 @@ jobs:
         if: steps.version.outputs.release == 'true'
         run: npm run compile
 
-      - name: Run tests
+      - name: Run unit tests
         if: steps.version.outputs.release == 'true'
-        run: npm test
+        run: npm run test:unit
+
+      - name: Run integration tests
+        if: steps.version.outputs.release == 'true'
+        run: xvfb-run -a npm run test:integration
 
       - name: Package extension
         if: steps.version.outputs.release == 'true'
