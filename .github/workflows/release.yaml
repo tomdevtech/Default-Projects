@@ -1,10 +1,11 @@
-
 name: Release VS Code Extension
 
 on:
   push:
     branches:
       - main
+    paths:
+      - 'vs-code-extension/**'
 
 permissions:
   contents: write
@@ -13,6 +14,10 @@ jobs:
   release:
     name: Build and publish
     runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: vs-code-extension
 
     steps:
       - name: Checkout repository
@@ -25,13 +30,14 @@ jobs:
         with:
           node-version: 22
           cache: npm
+          cache-dependency-path: vs-code-extension/package-lock.json
 
       - name: Check version increase
         id: version
         shell: bash
         run: |
           CURRENT=$(node -p "require('./package.json').version")
-          PREVIOUS=$(git show "${{ github.event.before }}:package.json" 2>/dev/null | node -e "
+          PREVIOUS=$(git show "${{ github.event.before }}:vs-code-extension/package.json" 2>/dev/null | node -e "
             let s='';
             process.stdin.on('data', d => s += d);
             process.stdin.on('end', () => {
@@ -93,13 +99,17 @@ jobs:
         if: steps.version.outputs.release == 'true'
         run: npm run compile
 
+      - name: Run tests
+        if: steps.version.outputs.release == 'true'
+        run: npm test
+
       - name: Package extension
         if: steps.version.outputs.release == 'true'
         run: npx --yes @vscode/vsce package
 
       - name: Publish to VS Code Marketplace
         if: steps.version.outputs.release == 'true'
-        run: npx --yes @vscode/vsce publish
+        run: npx --yes @vscode/vsce publish --packagePath *.vsix
         env:
           VSCE_PAT: ${{ secrets.VSCE_TOKEN }}
 
