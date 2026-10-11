@@ -11,8 +11,12 @@
 
 ## 0.1.1
 
-- Internal Update, no changes made
+- Internal Update, no changes made for marketplace
 
 ## 0.1.2 
 
 - Updated descriptions on the marketplace page and added pictures
+
+## 0.2.0 
+
+- Internal Update, no changes made for marketplace

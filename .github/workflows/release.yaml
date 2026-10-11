@@ -82,7 +82,7 @@ jobs:
             else cmp = b[3].localeCompare(a[3]) < 0 ? 1 : -1;
           }
 
-          if (cmp <= 0) {
+          if (cmp >= 0) {
             console.error(`Version must increase: ${process.argv[2]} -> ${process.argv[3]}`);
             process.exit(1);
           }
