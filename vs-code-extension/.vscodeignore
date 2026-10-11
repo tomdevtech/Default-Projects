@@ -1,6 +1,7 @@
 # Everything listed here is NOT shipped in the .vsix.
 .vscode/**
 .vscode-test/**
+.vscode-test.mjs
 src/**
 out/test/**
 **/*.map
