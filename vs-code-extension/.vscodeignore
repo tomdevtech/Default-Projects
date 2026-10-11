@@ -1,0 +1,12 @@
+# Everything listed here is NOT shipped in the .vsix.
+.vscode/**
+.vscode-test/**
+.vscode-test.mjs
+src/**
+out/test/**
+**/*.map
+**/tsconfig.json
+.gitignore
+docs/**
+node_modules/**
+*.vsix

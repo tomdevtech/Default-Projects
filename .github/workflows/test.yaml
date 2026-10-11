@@ -1,0 +1,51 @@
+name: Test VS Code Extension
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'vs-code-extension/**'
+  push:
+    branches-ignore:
+      - main
+    paths:
+      - 'vs-code-extension/**'
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Lint, compile and test
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: vs-code-extension
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: vs-code-extension/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint --if-present
+
+      - name: Compile extension
+        run: npm run compile
+
+      - name: Run unit tests
+        run: npm run test:unit
+
+      - name: Run integration tests
+        run: xvfb-run -a npm run test:integration
