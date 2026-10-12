@@ -36,3 +36,7 @@
 ## 0.2.3
 
 - Updated product descriptions
+
+## 0.2.4
+
+- Updated product descriptions
