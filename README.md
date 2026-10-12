@@ -31,7 +31,7 @@ The fastest way to see the extension in action: create a ready-made Python proje
 
 Your new project appears inside your open workspace folder (or in a folder you choose if none is open).
 
-![Creating the built-in Python project from the sidebar](repo-media/CreationPythonProject.gif)
+![Creating the built-in Python project from the sidebar](vs-code-extension/media/CreationPythonProject.gif)
 
 ### Create your own custom project
 
@@ -43,7 +43,7 @@ Build a template once, then reuse it as often as you like.
 4. Click the **new-folder button** next to your template in the sidebar.
 5. Enter a project name. Done.
 
-![Creating a custom project from your own template](repo-media/CreationCustomProject.gif)
+![Creating a custom project from your own template](vs-code-extension/media/CreationCustomProject.gif)
 
 You can also use the Command Palette: run `Default Projects: Create Project from Template...` and pick your template by its title.
 
