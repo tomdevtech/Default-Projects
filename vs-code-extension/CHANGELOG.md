@@ -24,3 +24,7 @@
 ## 0.2.0 
 
 - Internal Update, no changes made for marketplace
+
+## 0.2.1
+
+- Updated product descriptions
