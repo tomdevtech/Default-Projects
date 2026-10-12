@@ -28,3 +28,11 @@
 ## 0.2.1
 
 - Updated product descriptions
+
+## 0.2.2
+
+- Updated product descriptions
+
+## 0.2.3
+
+- Updated product descriptions
